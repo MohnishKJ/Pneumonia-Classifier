@@ -109,47 +109,9 @@ main {
     background: #e3f2fd;
 }
 
-.resources-box {
-    border-color: #0277bd;
-    background: #e1f5fe;
+500;
 }
-
-/* Lists Styling */
-.symptoms-list,
-.resources-list {
-    list-style: none;
-    padding: 0;
-}
-
-.symptoms-list li,
-.resources-list li {
-    display: flex;
-    align-items: center;
-    padding: 0.8rem;
-    border-bottom: 2px solid rgba(25, 118, 210, 0.2);
-    font-weight: 500;
-}
-
-.symptoms-list li:last-child,
-.resources-list li:last-child {
-    border-bottom: none;
-}
-
-.symptom-icon,
-.resource-icon {
-    font-size: 1.4em;
-    margin-right: 1rem;
-    min-width: 2rem;
-}
-
-/* Process List */
-.process-list {
-    list-style: none;
-    padding: 0;
-}
-
-.process-list li {
-    position: relative;
+relative;
     padding: 1rem;
     margin-bottom: 1rem;
     background: rgba(255, 255, 255, 0.7);
