@@ -10,7 +10,6 @@
 
 - 📊 **Health Recommendations:** Offers actionable health tips based on analysis results to promote informed healthcare decisions.
 
-- 📈 **Robust Performance:** Achieves high accuracy, precision, recall, and F1-score, ensuring reliable detection capabilities.
 
 ## Tech Stack
 - 💻 **Programming Languages:** Python, HTML, CSS, JavaScript  
