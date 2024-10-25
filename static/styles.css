@@ -1,1 +1,312 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f2f5;
+    color: #2c3e50;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.logo-wrapper {
+    display: inline-block;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3em;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 3px;
+}
+
+.logo-subtitle {
+    color: #90caf9;
+    font-size: 1.1em;
+    display: block;
+    letter-spacing: 1px;
+}
+
+/* Main Content Layout */
+main {
+    padding: 1.5rem;
+}
+
+.flex-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Section Styles */
+.about-section,
+.upload-container,
+.how-it-works-section {
+    background: white;
+    border-radius: 12px;
+    border: 3px solid #1a237e;
+    padding: 1.5rem;
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-header h2 {
+    color: #1a237e;
+    font-size: 1.8em;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #1a237e;
+    margin-bottom: 1rem;
+}
+
+.section-header h3 {
+    color: #0d47a1;
+    font-size: 1.4em;
+    margin-top: 1.5rem;
+}
+
+/* Content Boxes */
+.content-box {
+    background: #f8f9fa;
+    border: 3px solid #1976d2;
+    border-radius: 8px;
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.primary-box {
+    border-color: #1a237e;
+    background: #e8eaf6;
+}
+
+.symptoms-box {
+    border-color: #0d47a1;
+    background: #e3f2fd;
+}
+
+.process-box {
+    border-color: #1565c0;
+    background: #e3f2fd;
+}
+
+.resources-box {
+    border-color: #0277bd;
+    background: #e1f5fe;
+}
+
+/* Lists Styling */
+.symptoms-list,
+.resources-list {
+    list-style: none;
+    padding: 0;
+}
+
+.symptoms-list li,
+.resources-list li {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    border-bottom: 2px solid rgba(25, 118, 210, 0.2);
+    font-weight: 500;
+}
+
+.symptoms-list li:last-child,
+.resources-list li:last-child {
+    border-bottom: none;
+}
+
+.symptom-icon,
+.resource-icon {
+    font-size: 1.4em;
+    margin-right: 1rem;
+    min-width: 2rem;
+}
+
+/* Process List */
+.process-list {
+    list-style: none;
+    padding: 0;
+}
+
+.process-list li {
+    position: relative;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    border: 2px solid #1976d2;
+}
+
+.step-number {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background: #1a237e;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.step-icon {
+    font-size: 1.4em;
+    margin-right: 0.5rem;
+}
+
+/* Upload Area Styling */
+.img-area {
+    border: 3px dashed #1a237e;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 1rem 0;
+    text-align: center;
+    background: #e8eaf6;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.img-area:hover {
+    background: #c5cae9;
+}
+
+.upload-text {
+    text-align: center;
+}
+
+.upload-icon {
+    font-size: 3em;
+    color: #1a237e;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.preview-img {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 8px;
+    border: 3px solid #1a237e;
+}
+
+
+/* Button Group Styling */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background: #1a237e;
+    color: white;
+}
+
+.btn-secondary {
+    background: #0d47a1;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.btn-icon {
+    font-size: 1.2em;
+}
+
+/* Result Section Styling */
+.result-box {
+    text-align: center;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border: 3px solid #1a237e;
+    border-radius: 12px;
+    margin-bottom: 1.5rem; /* Add margin to create space between result-box and button */
+}
+
+.prediction-text {
+    font-size: 2em;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.description {
+    font-size: 1.1em;
+    color: #455a64;
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+/* Tips Container Styling */
+.tips-container {
+    background: #e8eaf6;
+    border: 3px solid #1a237e;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 2rem; /* Increase margin to ensure space between tips and the button */
+    clear: both; /* Ensures tips are cleared from floating elements */
+}
+.tips-container h3 {
+    color: #1a237e;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.4em;
+}
+
+.tips-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tips-list li {
+    padding: 0.8rem;
+    border-bottom: 2px solid rgba(25, 118, 210, 0.2);
+}
+
+.tips-list li:last-child {
+    border-bottom: none;
+}
