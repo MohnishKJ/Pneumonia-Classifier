@@ -114,49 +114,6 @@
                     </ol>
                 </div>
 
-                <div class="section-header">
-                    <h3>Resources</h3>
-                </div>
-                <div class="content-box resources-box">
-                    <ul class="resources-list">
-                        <li>
-                            <a href="https://www.cdc.gov/pneumonia/index.html" target="_blank">
-                                <span class="resource-icon">🏥</span> CDC Pneumonia Guide
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.who.int/health-topics/pneumonia" target="_blank">
-                                <span class="resource-icon">🌍</span> WHO Resources
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <script>
-        const fileInput = document.getElementById('file');
-        const selectImageBtn = document.querySelector('.select-image');
-        const previewImg = document.getElementById('previewImg');
-        const uploadText = document.querySelector('.upload-text');
-
-        selectImageBtn.addEventListener('click', () => {
-            fileInput.click();
-        });
-
-        fileInput.addEventListener('change', function() {
-            const file = this.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    previewImg.src = event.target.result;
-                    previewImg.style.display = 'block';
-                    uploadText.style.display = 'none';
-                }
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
+        
 </body>
 </html>
