@@ -1,1 +1,162 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PneumoniaDoc</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo-wrapper">
+                <h1 class="logo">PneumoniaDoc</h1>
+                <span class="logo-subtitle">AI-Powered Pneumonia Detection</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="flex-container">
+            <section class="about-section">
+                <div class="section-header">
+                    <h2>About PneumoniaDoc</h2>
+                </div>
+                <div class="content-box primary-box">
+                    <p>PneumoniaDoc is a cutting-edge AI-powered application that analyzes chest X-ray images to detect signs of pneumonia. Our advanced machine learning model provides rapid and reliable preliminary assessments.</p>
+                </div>
+
+                <div class="section-header">
+                    <h3>Common Symptoms</h3>
+                </div>
+                <div class="content-box symptoms-box">
+                    <ul class="symptoms-list">
+                        <li><span class="symptom-icon"></span> Persistent Coughing</li>
+                        <li><span class="symptom-icon"></span> Shortness of Breath</li>
+                        <li><span class="symptom-icon"></span> Chest Pain</li>
+                        <li><span class="symptom-icon"></span> Fatigue</li>
+                        <li><span class="symptom-icon"></span> Fever</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="upload-container">
+                <div class="section-header">
+                    <h2>X-ray Analysis</h2>
+                </div>
+                <div class="container">
+                    {% if prediction %}
+                        <div class="result-box">
+                            <h2 class="prediction-text" style="color: {{ color }};">{{ prediction }}</h2>
+                            <p class="description">{{ message }}</p>
+                            <div class="tips-container">
+                                <h3>{{ tips_title }}</h3>
+                                <ul class="tips-list">
+                                    {% for tip in tips %}
+                                        <li>{{ tip }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <button class="btn btn-primary upload-another" type="button" onclick="window.location.href='/'">
+                                <span class="btn-icon">📤</span> Upload Another Image
+                            </button>
+                        </div>
+                    {% else %}
+                        <form action="/predict" method="post" enctype="multipart/form-data">
+                            <input type="file" id="file" name="file" accept="image/*" hidden>
+                            <div class="img-area" data-img="">
+                                <div class="upload-text">
+                                    <span class="upload-icon">📋</span>
+                                    <p>Click or drag X-ray image here</p>
+                                </div>
+                                <img id="previewImg" src="" alt="Image Preview" class="preview-img" style="display:none;">
+                            </div>
+                            <div class="button-group">
+                                <button class="btn btn-primary select-image" type="button">
+                                    <span class="btn-icon">📁</span> Select Image
+                                </button>
+                                <button class="btn btn-secondary submit-image" type="submit">
+                                    <span class="btn-icon">🔍</span> Analyze
+                                </button>
+                            </div>
+                        </form>
+                    {% endif %}
+                </div>
+            </section>
+
+            <section class="how-it-works-section">
+                <div class="section-header">
+                    <h2>How It Works</h2>
+                </div>
+                <div class="content-box process-box">
+                    <ol class="process-list">
+                        <li>
+                            <span class="step-number">1</span>
+                            <span class="step-icon">📤</span>
+                            <strong>Upload X-ray</strong>
+                            <p>Select and upload a chest X-ray image</p>
+                        </li>
+                        <li>
+                            <span class="step-number">2</span>
+                            <span class="step-icon">🔄</span>
+                            <strong>AI Analysis</strong>
+                            <p>Our AI model analyzes the image</p>
+                        </li>
+                        <li>
+                            <span class="step-number">3</span>
+                            <span class="step-icon">📊</span>
+                            <strong>Get Results</strong>
+                            <p>Receive instant analysis results</p>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="section-header">
+                    <h3>Resources</h3>
+                </div>
+                <div class="content-box resources-box">
+                    <ul class="resources-list">
+                        <li>
+                            <a href="https://www.cdc.gov/pneumonia/index.html" target="_blank">
+                                <span class="resource-icon">🏥</span> CDC Pneumonia Guide
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.who.int/health-topics/pneumonia" target="_blank">
+                                <span class="resource-icon">🌍</span> WHO Resources
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        const fileInput = document.getElementById('file');
+        const selectImageBtn = document.querySelector('.select-image');
+        const previewImg = document.getElementById('previewImg');
+        const uploadText = document.querySelector('.upload-text');
+
+        selectImageBtn.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    previewImg.src = event.target.result;
+                    previewImg.style.display = 'block';
+                    uploadText.style.display = 'none';
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
