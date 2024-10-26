@@ -15,3 +15,7 @@
 - 💻 **Programming Languages:** Python, HTML, CSS, JavaScript  
 - 🔧 **Frameworks:** Flask for web development  
 - 📚 **Libraries:** TensorFlow, Keras, OpenCV, NumPy  
+
+## Demo
+
+- Watch out the demo of the project here: https://drive.google.com/file/d/1CuyeLC1dWYUR87Hyn8HjSlfCLGDFnaGG/view?usp=sharing
